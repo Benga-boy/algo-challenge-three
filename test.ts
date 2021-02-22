@@ -48,3 +48,31 @@ function evenDigitsOnly(n: number): boolean {
 
 console.log(evenDigitsOnly(248622));
 console.log(evenDigitsOnly(642386));
+
+function extractMatrixColumn(matrix: number[][], column: number): number[] {
+  return matrix.map(arr => arr[column])
+}
+
+console.log(extractMatrixColumn([[1, 1, 1, 2], [0, 5, 0, 4], [2, 1, 3, 6]], 2));
+
+
+function houseNumbersSum(inputArray: number[]): number {
+  const zeroIndex = inputArray.findIndex(num => num === 0)
+
+  let total = inputArray.slice(0, zeroIndex)
+
+
+
+  return total.reduce((a, b) => a + b)
+
+}
+
+console.log(houseNumbersSum([5, 1, 2, 3, 0, 1, 5, 0, 2]));
+
+
+function findEmailDomain(address: string): string {
+  return address.split('@').filter(email => email.includes('example')).join('')
+}
+
+console.log(findEmailDomain('prettyandsimple@example.com'));
+console.log(findEmailDomain('<>[]:,;@\"!#$%&*+-/=?^_{}| ~.a\"@example.org'));
